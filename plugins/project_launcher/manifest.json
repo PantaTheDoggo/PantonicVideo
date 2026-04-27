@@ -1,0 +1,16 @@
+{
+  "name": "project_launcher",
+  "version": "1.0.0",
+  "contracts_min_version": "1.0.0",
+  "author": "PantonicVideo",
+  "description": "Folder picker for selecting and opening a project directory.",
+  "entry_point": "plugins.project_launcher.plugin:ProjectLauncherPlugin",
+  "required_services": [
+    {"name": "project_service", "min_version": "1.0.0"},
+    {"name": "filesystem_service", "min_version": "1.0.0"},
+    {"name": "logging_service", "min_version": "1.0.0"}
+  ],
+  "inputs": [],
+  "outputs": [],
+  "permissions": []
+}

@@ -1,0 +1,17 @@
+{
+  "name": "subtitle_text_tool",
+  "version": "1.0.0",
+  "contracts_min_version": "1.0.0",
+  "author": "PantonicVideo",
+  "description": "Text input tool for generating SRT subtitle files.",
+  "entry_point": "plugins.subtitle_text_tool.plugin:SubtitleTextToolPlugin",
+  "required_services": [
+    {"name": "subtitle_service", "min_version": "1.0.0"},
+    {"name": "filesystem_service", "min_version": "1.0.0"},
+    {"name": "project_service", "min_version": "1.0.0"},
+    {"name": "logging_service", "min_version": "1.0.0"}
+  ],
+  "inputs": [],
+  "outputs": [],
+  "permissions": []
+}

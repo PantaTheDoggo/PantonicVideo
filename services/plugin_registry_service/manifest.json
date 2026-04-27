@@ -1,0 +1,10 @@
+{
+  "name": "plugin_registry_service",
+  "service_api_version": "1.0.0",
+  "implementation_version": "1.0.0",
+  "entry_point": "services.plugin_registry_service.service:PluginRegistryServiceImpl",
+  "depends_on": [
+    {"name": "signal_service", "min_version": "1.0.0"},
+    {"name": "app_state_service", "min_version": "1.0.0"}
+  ]
+}

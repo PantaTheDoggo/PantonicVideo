@@ -1,0 +1,17 @@
+{
+  "name": "image_cropping",
+  "version": "1.0.0",
+  "contracts_min_version": "1.0.0",
+  "author": "PantonicVideo",
+  "description": "Image crop and resize tool with Qt-rendered preview.",
+  "entry_point": "plugins.image_cropping.plugin:ImageCroppingPlugin",
+  "required_services": [
+    {"name": "image_service", "min_version": "1.0.0"},
+    {"name": "filesystem_service", "min_version": "1.0.0"},
+    {"name": "project_service", "min_version": "1.0.0"},
+    {"name": "logging_service", "min_version": "1.0.0"}
+  ],
+  "inputs": [],
+  "outputs": [],
+  "permissions": []
+}

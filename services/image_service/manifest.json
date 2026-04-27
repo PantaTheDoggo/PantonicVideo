@@ -1,0 +1,9 @@
+{
+  "name": "image_service",
+  "service_api_version": "1.0.0",
+  "implementation_version": "1.0.0",
+  "entry_point": "services.image_service.service:ImageServiceImpl",
+  "depends_on": [
+    {"name": "filesystem_service", "min_version": "1.0.0"}
+  ]
+}

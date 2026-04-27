@@ -1,0 +1,7 @@
+{
+  "name": "signal_service",
+  "service_api_version": "1.0.0",
+  "implementation_version": "1.0.0",
+  "entry_point": "services.signal_service.service:SignalServiceImpl",
+  "depends_on": []
+}

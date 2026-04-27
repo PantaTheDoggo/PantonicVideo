@@ -1,0 +1,7 @@
+{
+  "name": "injector_service",
+  "service_api_version": "1.0.0",
+  "implementation_version": "1.0.0",
+  "entry_point": "services.injector_service.service:InjectorServiceImpl",
+  "depends_on": []
+}

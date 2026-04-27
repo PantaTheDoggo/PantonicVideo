@@ -1,0 +1,7 @@
+{
+  "name": "logging_service",
+  "service_api_version": "1.0.0",
+  "implementation_version": "1.0.0",
+  "entry_point": "services.logging_service.service:LoggingServiceImpl",
+  "depends_on": []
+}

@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python -m pytest tests/infracore/test_lifecycle.py tests/infracore/test_ui_shell.py -q)",
+      "Bash(python -m pytest tests/infracore/ tests/contracts/ -q)"
+    ]
+  }
+}
