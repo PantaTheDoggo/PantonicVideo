@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(mkdir -p infracore/bootstrap_components/signal_component infracore/bootstrap_components/app_state_component infracore/bootstrap_components/filesystem_component infracore/bootstrap_components/plugin_registry_component infracore/bootstrap_components/logging_component infracore/injector_component infracore/lifecycle infracore/manifest infracore/ui_shell)",
+      "Bash(mkdir -p contracts/src/contracts)",
+      "Bash(mkdir -p services/injector_service services/signal_service services/app_state_service services/filesystem_service services/plugin_registry_service services/logging_service services/project_service services/image_service services/subtitle_service)",
+      "Bash(mkdir -p plugins/project_launcher plugins/image_cropping plugins/subtitle_text_tool)",
+      "Bash(mkdir -p tests/infracore tests/contracts tests/services tests/plugins tests/integration)"
+    ]
+  }
+}
