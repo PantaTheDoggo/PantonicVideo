@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import shutil
 import threading
 import uuid
 from pathlib import Path
@@ -56,3 +57,12 @@ class FilesystemComponent:
 
     def unwatch(self, handle: SubscriptionHandle) -> None:
         self._watches.pop(handle, None)  # type: ignore[call-overload]
+
+    def rename(self, src: Path, dst: Path) -> None:
+        Path(src).rename(dst)
+
+    def move(self, src: Path, dst: Path) -> None:
+        shutil.move(str(src), dst)
+
+    def copy(self, src: Path, dst: Path) -> None:
+        shutil.copy2(src, dst)

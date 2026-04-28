@@ -75,3 +75,28 @@ class TestFilesystemServiceProtocol:
         mock_signal_service.signal_for_path.return_value = MagicMock()
         service.watch(Path("/tmp"))
         mock_signal_service.signal_for_path.assert_called_once_with(Path("/tmp"))
+
+    def test_rename_delegates_to_component(self, service, mock_filesystem_component):
+        """service-extender Sprint 1: rename delegates to FilesystemComponent.rename."""
+        service.rename(Path("/tmp/a"), Path("/tmp/b"))
+        mock_filesystem_component.rename.assert_called_once_with(Path("/tmp/a"), Path("/tmp/b"))
+
+    def test_move_delegates_to_component(self, service, mock_filesystem_component):
+        """service-extender Sprint 1: move delegates to FilesystemComponent.move."""
+        service.move(Path("/tmp/a"), Path("/tmp/sub/a"))
+        mock_filesystem_component.move.assert_called_once_with(Path("/tmp/a"), Path("/tmp/sub/a"))
+
+    def test_copy_delegates_to_component(self, service, mock_filesystem_component):
+        """service-extender Sprint 1: copy delegates to FilesystemComponent.copy."""
+        service.copy(Path("/tmp/a"), Path("/tmp/b"))
+        mock_filesystem_component.copy.assert_called_once_with(Path("/tmp/a"), Path("/tmp/b"))
+
+
+class TestServiceApiVersion:
+    """service-extender Sprint 1 — manifest version gate."""
+
+    def test_manifest_service_api_version_1_1_0(self):
+        """service_api_version must be 1.1.0 after Sprint 1."""
+        import json
+        data = json.loads(Path("services/filesystem_service/manifest.json").read_text())
+        assert data["service_api_version"] == "1.1.0"

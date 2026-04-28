@@ -1,0 +1,17 @@
+{
+  "name": "project_folder",
+  "version": "1.0.0",
+  "contracts_min_version": "1.0.0",
+  "author": "PantonicVideo",
+  "description": "Browse and manage files within the current project folder.",
+  "entry_point": "plugins.project_folder.plugin:ProjectFolderPlugin",
+  "required_services": [
+    {"name": "app_state_service",  "min_version": "1.0.0"},
+    {"name": "filesystem_service", "min_version": "1.1.0"},
+    {"name": "signal_service",     "min_version": "1.0.0"},
+    {"name": "logging_service",    "min_version": "1.0.0"}
+  ],
+  "inputs": [],
+  "outputs": [],
+  "permissions": []
+}

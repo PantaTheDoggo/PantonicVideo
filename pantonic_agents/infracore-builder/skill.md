@@ -1,6 +1,22 @@
 # Skill: infracore-builder
 
-**Rules:** see `_shared/rules.md` (G1–G10 apply verbatim).
+**Authoritative reference:** `project_artifacts/as-is.md` is the single source of truth for the application state, architecture, catalog, and rules. Consult it before implementing. At the end of every sprint, update it to reflect the new state.
+
+**Rules:** see `rules.md` (G1–G10 apply verbatim).
+
+## Pre-Sprint: Handoff Check
+
+**Before any implementation, read `project_artifacts/handoff.md`.**
+1. For each **open** item, decide: does it fall within this role and the current sprint?
+2. If yes and a spec exists in `project_artifacts/history/`: include the item in this sprint.
+3. If yes but no spec exists: **stop — all development requires a spec first.** Request one before proceeding.
+4. If no: leave the item open and continue.
+
+**Spec lifecycle rule:**  
+Every development task requires a spec under `project_artifacts/history/<spec_name>.md` before coding starts.  
+Specs in progress stay in `project_artifacts/history/`. When the sprint is complete, move the spec to `project_artifacts/history/done/` and mark the item **done** in `handoff.md`.
+
+---
 
 ## Purpose
 Implement components and contracts to turn `tests/infracore/` and `tests/contracts/` from red to green.

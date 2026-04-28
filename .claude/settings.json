@@ -2,7 +2,12 @@
   "permissions": {
     "allow": [
       "Bash(python -m pytest tests/infracore/test_lifecycle.py tests/infracore/test_ui_shell.py -q)",
-      "Bash(python -m pytest tests/infracore/ tests/contracts/ -q)"
+      "Bash(python -m pytest tests/infracore/ tests/contracts/ -q)",
+      "Bash(python -m pytest tests/plugins/ -q --no-header)",
+      "Bash(python -m pytest tests/ --timeout=30 -q)",
+      "Bash(python -m pytest tests/ -x --tb=short -q)",
+      "Bash(python -m pytest tests/infracore/ tests/contracts/ tests/services/ -q --no-header)",
+      "Bash(python -m pytest tests/integration/ -q --no-header)"
     ]
   }
 }

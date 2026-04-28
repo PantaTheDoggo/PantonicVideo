@@ -132,3 +132,39 @@ class TestWatch:
         component = FilesystemComponent(signal_component=signal_comp)
         handle = component.watch(tmp_path, lambda e: None)
         component.unwatch(handle)
+
+
+class TestRenameMoveCopy:
+    """service-extender Sprint 1 — rename/move/copy (FilesystemService v1.1.0)."""
+
+    def test_rename_renames_file(self, tmp_path):
+        """rename(src, dst) moves file; src gone, dst has original bytes."""
+        component = FilesystemComponent()
+        src = tmp_path / "a.txt"
+        dst = tmp_path / "b.txt"
+        src.write_bytes(b"data")
+        component.rename(src, dst)
+        assert not src.exists()
+        assert dst.read_bytes() == b"data"
+
+    def test_move_moves_file_to_different_dir(self, tmp_path):
+        """move(src, dst) relocates file across directories; src gone, dst has bytes."""
+        component = FilesystemComponent()
+        src = tmp_path / "a.txt"
+        sub = tmp_path / "sub"
+        sub.mkdir()
+        src.write_bytes(b"data")
+        dst = sub / "a.txt"
+        component.move(src, dst)
+        assert not src.exists()
+        assert dst.read_bytes() == b"data"
+
+    def test_copy_duplicates_file(self, tmp_path):
+        """copy(src, dst) duplicates file; src still exists, dst has same bytes."""
+        component = FilesystemComponent()
+        src = tmp_path / "a.txt"
+        dst = tmp_path / "b.txt"
+        src.write_bytes(b"data")
+        component.copy(src, dst)
+        assert src.exists()
+        assert dst.read_bytes() == b"data"

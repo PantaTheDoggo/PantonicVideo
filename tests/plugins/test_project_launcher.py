@@ -18,13 +18,21 @@ def qapp():
     return QApplication.instance() or QApplication(sys.argv[:1])
 
 
+@pytest.fixture(autouse=True)
+def _no_file_dialog(monkeypatch):
+    """Prevent real QFileDialog from opening during floor tests."""
+    from PySide6.QtWidgets import QFileDialog
+    monkeypatch.setattr(QFileDialog, "getExistingDirectory", staticmethod(lambda *a, **kw: ""))
+
+
 @pytest.fixture()
 def mocked_services():
     from unittest.mock import MagicMock
     return {
-        "project_service": MagicMock(),
+        "project_service":    MagicMock(),
         "filesystem_service": MagicMock(),
-        "logging_service": MagicMock(),
+        "app_state_service":  MagicMock(),
+        "logging_service":    MagicMock(),
     }
 
 

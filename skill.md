@@ -1,6 +1,8 @@
 # Skill: test-author
 
-**Rules:** see `_shared/rules.md` (G1–G10 apply verbatim).
+**Authoritative reference:** `project_artifacts/as-is.md` is the single source of truth for the application state, architecture, catalog, and rules. Consult it before implementing. At the end of every sprint, update it to reflect the new state.
+
+**Rules:** see `rules.md` (G1–G10 apply verbatim).
 
 ## Purpose
 Produce the failing functional-test corpus under `tests/` before any production code exists.

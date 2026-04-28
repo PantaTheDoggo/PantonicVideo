@@ -29,3 +29,12 @@ class FilesystemServiceImpl:
 
     def watch(self, path: Path) -> Any:
         return self._signal_service.signal_for_path(path)
+
+    def rename(self, src: Path, dst: Path) -> None:
+        self._comp.rename(src, dst)
+
+    def move(self, src: Path, dst: Path) -> None:
+        self._comp.move(src, dst)
+
+    def copy(self, src: Path, dst: Path) -> None:
+        self._comp.copy(src, dst)

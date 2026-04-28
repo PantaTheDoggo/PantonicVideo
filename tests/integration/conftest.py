@@ -20,6 +20,14 @@ def pantonicvideo_root(tmp_path):
     return root
 
 
+@pytest.fixture(autouse=True)
+def _no_file_dialog(monkeypatch):
+    """Prevent real QFileDialog from blocking integration tests."""
+    pytest.importorskip("PySide6", reason="PySide6 required")
+    from PySide6.QtWidgets import QFileDialog
+    monkeypatch.setattr(QFileDialog, "getExistingDirectory", staticmethod(lambda *a, **kw: ""))
+
+
 @pytest.fixture()
 def app_runner(pantonicvideo_root, monkeypatch):
     """Run infracore/app.py against the temporary root; returns the exit status."""
